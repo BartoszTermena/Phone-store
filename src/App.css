@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Montserrat');
 :root {
-  --primary-color: #B30000;
-  --secondary-color: #000;
-  --mainWhite:#f3f3f3;
+  --primary-color: #2a2a72;
+  --secondary-color: #f3f3f3;
+  --mainDark: #232528;
   --mainYellow:#ffa400;
+  --mainBlue: #009ffd;
 }
 body {
-  font-family: 'Crimson Text', serif !important;
+  font-family: 'Monsterrat', serif !important;
   background: var(--secondary-color) !important;
-  color: var(--mainWhite) !important;
+  color: var(--mainDark) !important;
+  font-size: 2rem !important;
 }
 .text-title {
   font-family: 'Monsterrat', serif;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.02rem;
   text-transform: uppercase;
 }
-.text-red {
+.text-blue {
   color: var(--primary-color);
 }
