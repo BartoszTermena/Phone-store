@@ -25,3 +25,11 @@ body {
   color: var(--primary-color);
   font-size: 1rem !important;
 }
+.text-detail {
+  color: var(--mainDark);
+  font-size: 1.8rem !important;
+}
+.text-info {
+  font-size: 1rem !important;
+  color: var(--mainDark);
+}
