@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../logo.svg';
 import styled from 'styled-components';
 import {ButtonContainer} from './Button';
+import {ProductConsumer} from '../context';
 
 
 class Navbar extends Component {
@@ -21,11 +22,29 @@ class Navbar extends Component {
             </Link>
           </li>
         </ul>
-        <Link to="/cart" className="ml-auto">
-          <ButtonContainer>
-            <i className="fas fa-cart-plus"></i> My Cart
-          </ButtonContainer>
-        </Link>
+        <ProductConsumer>
+        {(value) => {
+          const {cart} = value;
+          console.log(cart)
+          if(cart.length ==0 ){
+          return (
+          <Link to="/cart" className="ml-auto">
+            <ButtonContainer>
+              <i className="fas fa-cart-plus"></i> My Cart
+             
+            </ButtonContainer>
+          </Link>
+          )} else {
+            return (
+              <Link to="/cart" className="ml-auto">
+              <ButtonContainer>
+                <i className="fas fa-cart-plus stuff-incart"></i> My Cart
+              </ButtonContainer>
+            </Link>
+            )
+          }
+        }}
+        </ProductConsumer>
       </NavWrapper>
     )
   }
