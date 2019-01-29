@@ -12,8 +12,8 @@ export const ButtonContainer = styled.button`
   margin: 0.2rem 0.5rem 0;
   transition: all 0.5s ease-in-out;
   &:hover{
-    background: ${props => props.cart?'var(--mainYellow)':'var(--mainBlue)'};
-    color: var(--secondary-color);
+    background: ${props => props.cart?'var(--mainYellow)':'transparent'};
+    color: var(--mainDark);
   }
   &:focus {
     outline: none;

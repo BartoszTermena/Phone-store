@@ -9,7 +9,7 @@ import {ProductConsumer} from '../context';
 class Navbar extends Component {
   render() {
     return (
-      <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
+      <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5 fixed-top">
         <Link to="/">
           <img src={logo}  
           className="navbar-brand"
@@ -18,7 +18,9 @@ class Navbar extends Component {
         <ul className="navbar-nav align-items-center">
           <li className="nav-item ml-2">
             <Link to="/products" className="nav-link">
-            products
+            <ButtonContainer>
+              <i className="fas fa-mobile"></i> products
+            </ButtonContainer>
             </Link>
           </li>
         </ul>
@@ -26,12 +28,11 @@ class Navbar extends Component {
         {(value) => {
           const {cart} = value;
           console.log(cart)
-          if(cart.length ==0 ){
+          if(cart.length === 0 ){
           return (
           <Link to="/cart" className="ml-auto">
             <ButtonContainer>
               <i className="fas fa-cart-plus"></i> My Cart
-             
             </ButtonContainer>
           </Link>
           )} else {
@@ -50,12 +51,14 @@ class Navbar extends Component {
   }
 }
 const NavWrapper = styled.nav`
-  background: var(--primary-color);
+  background: var(--secondary-color);
+  border: 0.1rem solid #e1e4e8;
   .nav-link {
     color: var(--secondary-color) !important;
     font-size: 1.3rem;
     text-transform: capitalize;
   }
 `;
+
 
 export default Navbar

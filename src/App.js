@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Fragment>
+        <div className="mt-5">
           <Navbar />
             <Switch>
               <Route path="/" component={Main} exact/>
@@ -24,7 +24,7 @@ class App extends Component {
               <Route component={Default} />
             </Switch>
           <Modal />
-        </Fragment>
+        </div>
       </Router>
     );
   }
